@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+   <h1>Erstelle einen neuen Beitrag</h1>   
+   <form action="" method="post">
+       {{ formR.hidden_tag() }}
+       <p>
+          {{ formR.text.label }}<br>
+          {{ formR.text(cols=50, rows=3) }}<br>
+          {% for error in formR.text.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+       </p>
+       <p>
+          {{ formR.p1_teamA.label }}<br>
+          {{ formR.p1_teamA(cols=30, rows=1) }}<br>
+          {% for error in formR.p1_teamA.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+       </p>
+       <p>
+          {{ formR.p2_teamA.label }}<br>
+          {{ formR.p2_teamA(size=3) }}<br>
+          {% for error in formR.p2_teamA.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+       </p>
+       <p>
+          {{ formR.p1_teamB.label }}<br>
+          {{ formR.p1_teamB(size=3) }}<br>
+          {% for error in formR.p1_teamB.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+       </p>
+       <p>
+          {{ formR.p2_teamB.label }}<br>
+          {{ formR.p2_teamB(size=3) }}<br>
+          {% for error in formR.p2_teamB.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+       </p>
+       <p>
+          {{ formR.points_teamA.label }}<br>
+          {{ formR.points_teamA(size=3) }}<br>
+          {% for error in formR.points_teamA.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+       </p>
+       <p>
+          {{ formR.points_teamB.label }}<br>
+          {{ formR.points_teamB(size=3) }}<br>
+          {% for error in formR.points_teamB.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+       </p>
+
+       <p>{{ formR.submit() }}</p>
+   </form>  
+
+    {% for result in results %}
+    <p>
+    {{ result.text }}</br>
+    </p>
+
+    <table>
+       <tr>
+          <th>Teams</th>
+          <th>Punkte</th>
+       </tr>
+       <tr>
+          <td>{{ result.p1_teamA }} / {{ result.p2_teamA }}</td>
+          <td>{{ result.points_teamA }} </td>
+       </tr>
+       <tr>
+          <td>{{ result.p1_teamB }} / {{ result.p2_teamB }}</td>
+       	  <td>{{ result.points_teamB }}</td>
+       </tr>
+    </table>
+    {% endfor %}
+
+{% endblock %}
