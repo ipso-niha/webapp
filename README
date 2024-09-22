@@ -1,1 +1,11 @@
-this is a git repo
+Aus dem Wissen der Fächer DBWE, ITAR und VICC sollte eine laufende Webanwendung entwickelt werden. 
+Die vorliegende Dokumentation beschreibt die Entwicklung und Bereitstellung einer Webseite, welche dazu dienen soll, Spielresultate eines Schieber-Jass-Matches zu erfassen.
+
+Auf der Startseite werden die bereits veröffentlichten Resultate aufgelistet. Mithilfe eines Registrierungs-Formular besteht die möglichkeit sich zu registrieren.
+Dazu werden ein Benutzername, eine E-Mail sowie ein Passwort benötigt. Ein Benutzer kann sein Profil bearbeiten und mit Geburtstag und Info-Text erweitern.
+Angemeldete Benutzer können eigene Resultat-Beiträgen erstellen. 
+Diese Resultat-Beiträge können mit einem Text, sowie mit den beiden Spielerpaaren und den erjassten Punktezahlen befüllt werden.
+
+Die Webanwendung wurde auf Diensten der Microsoft Azure Cloud entwickelt und bereitgestellt.
+Die Logik wurde mithilfe von Flask realisiert. Die Datenbankanbindung fand mit SQL Alchemy, einer Schnittstelle zwischen SLQ und Flask statt. 
+Als Webserver wird Waitress eingesetzt.
