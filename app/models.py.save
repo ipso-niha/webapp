@@ -45,19 +45,19 @@ class Results(db.Model):
     # hole alle results-einträge aus der db
    #    all_results = Results.query.all()
 
-#   def to_dict(self):
-#       data = {
- #      'id': self.id,
-  #     'text': self.text,
-  #     'date': self.date.isoformat() + 'Z',
-  #     'p1_teamA': self.p1_teamA,
-  #     'p2_teamA': self.p2_teamA,
-  #     'p1_teamB': self.p1_teamB,
-  #     'p2_teamB': self.p2_teamB,
-  #     'points_teamA': self.points_teamA,
-  #     'points_teamB': self.points_teamB,
-  #     }
-  #     return data
+   #def to_dict(self):
+   #    data = {
+   #    'id': self.id,
+   #    'text': self.text,
+   #    'date': self.date.isoformat() + 'Z',
+   #    'p1_teamA': self.p1_teamA,
+       'p2_teamA': self.p2_teamA,
+       'p1_teamB': self.p1_teamB,
+       'p2_teamB': self.p2_teamB,
+       'points_teamA': self.points_teamA,
+       'points_teamB': self.points_teamB,
+       }
+       return data
 
    def to_collection():
        results = Results.query.all()

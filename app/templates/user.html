@@ -3,9 +3,9 @@
    <table>
       <tr valign="top">
          <td>
-            <h1>User: {{ user.username }}</h1>
-            {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+            <h1>{{ user.username }}</h1>
             {% if user.last_seen %}<p>Zuletzt online am: {{ user.last_seen }}</p>{% endif %}
+            {% if user.about_me %}<p class="about_me">{{ user.about_me }}</p>{% endif %}            
             {% if user.birthday %}<p>Geburtstag: {{ user.birthday }}</p>{% endif %}
             {% if user == current_user %}
             <p><a href="{{ url_for('edit_profile') }}">Profil bearbeiten</a></p>
@@ -13,8 +13,4 @@
          </td>
       </tr>
    </table>
-   <hr>
-   {% for post in posts %}
-      {% include '_post.html' %}
-   {% endfor %}
 {% endblock %}

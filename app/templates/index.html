@@ -1,20 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-   <h1>Hi, {{ current_user.username }}!</h1>
-   <form action="" method="post">
-      {{ form.hidden_tag() }}
-      <p>
-         {{ form.post.label }}<br>
-         {{ form.post(cols=32, rows=4) }}<br>
-         {% for error in form.post.errors %}
-         <span style="color: red;">[{{ error }}]</span>
-         {% endfor %}
-      </p>
-      <p>{{ form.submit() }}</p>
-   </form>
-   {% for post in posts %}
-   <p>
-   {{ post.author.username }} says: <b>{{ post.body }}</br>
-   </p>
-   {% endfor %}
+
+   <h1>Hallo {{ current_user.username }}!</h1>
+   <h2>Sieh dir die neusten Resultate an!</h2>
+     {% for result in results %}
+     
+   <div class="post"> </div>
+     <p class="post_user">
+     Gepostet von <b>{{ result.author.username }}</b> am {{ result.date }}:
+     </p>
+     
+       <p class="res_text">
+       {{ result.text }}</br>
+       </p>
+
+       <table class="res_table">
+          <tr>
+             <th>Paare</th>
+             <th>Punkte</th>
+          </tr>
+          <tr>
+             <td>{{ result.p1_teamA }} / {{ result.p2_teamA }}</td>
+             <td>{{ result.points_teamA }} </td>
+          </tr>
+          <tr>
+             <td>{{ result.p1_teamB }} / {{ result.p2_teamB }}</td>
+             <td>{{ result.points_teamB }}</td>
+          </tr>
+       </table>
+       {% endfor %} 
+     
 {% endblock %}

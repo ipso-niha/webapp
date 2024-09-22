@@ -1,25 +1,22 @@
 <!doctype html>
 <html>
    <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
       {% if title %}
-      <title>{{ title }} - Microblog</title>
+      <title>{{ title }} - JVP</title>
       {% else %}
-      <title>Welcome to GedGam</title>
+      <title>JVP</title>
       {% endif %} 
    </head>
    <body>
-      <div>
-         Microblog:
-         <a href="{{ url_for('index') }}">Home</a>
+      <div class="nav">
+         <a href="{{ url_for('index') }}">Start</a>
          {% if current_user.is_anonymous %}
-         <a href="{{ url_for('login') }}">Login</a>
+         <a href="{{ url_for('login') }}">Anmelden</a>
          {% else %}
-         <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-         <a href="{{ url_for('logout') }}">Logout</a>
          <a href="{{ url_for('create_result') }}">Resultat teilen</a>
-         {% endif %}
-         {% if user == current_user %}
-         <a href="{{ url_for('edit_profile') }}">Profil bearbeiten</a>
+         <a href="{{ url_for('user', username=current_user.username) }}">Mein Profil</a>
+         <a href="{{ url_for('logout') }}">Abmelden</a>
          {% endif %}
       </div>
       <hr>

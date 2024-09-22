@@ -7,4 +7,6 @@ class Config(object):
       'sqlite:///' + os.path.join(basedir, 'app.db')
    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-   POSTS_PER_PAGE = 3
+   POSTS_PER_PAGE = 5
+   
+   SERVER_NAME = '172.161.147.246:8080'

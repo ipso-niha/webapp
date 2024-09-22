@@ -1,0 +1,47 @@
+* {
+  font-family: Helvetica, sans-serif;
+  margin: 0px;   
+}
+
+.nav {
+  background-color: lightblue;
+  text-align: left;
+  padding: 10px;
+}
+
+h1, h2 {
+  color: black;
+  text-align: left;
+  padding: 10px;
+}
+
+p {
+  padding-left: 10px;
+}
+
+.about_me {
+  padding: 10px;
+}
+
+.post {
+  border-width: 2px;
+  border-style: solid;
+}
+.post_user{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: lightblue;
+}
+
+.res_text{
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.res_table {
+  border-widht: 1px;
+  border-style: solid;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
